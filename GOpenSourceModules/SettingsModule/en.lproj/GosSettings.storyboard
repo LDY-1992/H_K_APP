@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QWm-W2-180">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="xzQ-4d-mnn">
+            <objects>
+                <navigationController id="QWm-W2-180" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Br-tx-3mo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RMh-s3-0xH" kind="relationship" relationship="rootViewController" id="6io-wM-M0r"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GlL-ue-rJ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-260" y="352"/>
+        </scene>
+        <!--Personal Center-->
+        <scene sceneID="X7g-Y2-2AI">
+            <objects>
+                <tableViewController id="RMh-s3-0xH" customClass="GosSettingsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="tGj-sb-LDj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="RMh-s3-0xH" id="tRo-Bs-Ow5"/>
+                            <outlet property="delegate" destination="RMh-s3-0xH" id="pHU-cf-Kjb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Personal Center" id="xb3-pS-4ew"/>
+                    <connections>
+                        <segue destination="tRm-8j-ehs" kind="show" identifier="toAbout" id="yFS-mC-EHS"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HZp-Eg-j0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="430" y="351"/>
+        </scene>
+        <!--Gos About View Controller-->
+        <scene sceneID="Wd9-VH-ark">
+            <objects>
+                <viewController storyboardIdentifier="GosAbout" id="tRm-8j-ehs" customClass="GosAboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DSP-6x-7hH"/>
+                        <viewControllerLayoutGuide type="bottom" id="psc-2D-dXR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YsH-Yw-QgI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="UCH-97-ZrQ">
+                                <rect key="frame" x="137.5" y="164" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="4yi-M0-bcs"/>
+                                    <constraint firstAttribute="width" constant="100" id="Hsa-yX-kKQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRf-hs-Pyo">
+                                <rect key="frame" x="166.5" y="294" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvt-oR-rTP">
+                                <rect key="frame" x="166.5" y="335" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IRf-hs-Pyo" firstAttribute="centerX" secondItem="YsH-Yw-QgI" secondAttribute="centerX" id="OFx-rB-cfg"/>
+                            <constraint firstItem="Nvt-oR-rTP" firstAttribute="top" secondItem="IRf-hs-Pyo" secondAttribute="bottom" constant="20" id="WuN-Dw-E8G"/>
+                            <constraint firstItem="Nvt-oR-rTP" firstAttribute="centerX" secondItem="YsH-Yw-QgI" secondAttribute="centerX" id="cLV-SO-b5i"/>
+                            <constraint firstItem="UCH-97-ZrQ" firstAttribute="centerX" secondItem="YsH-Yw-QgI" secondAttribute="centerX" id="naB-Ol-bXK"/>
+                            <constraint firstItem="UCH-97-ZrQ" firstAttribute="top" secondItem="DSP-6x-7hH" secondAttribute="bottom" constant="100" id="rAs-Uh-gRm"/>
+                            <constraint firstItem="IRf-hs-Pyo" firstAttribute="top" secondItem="UCH-97-ZrQ" secondAttribute="bottom" constant="30" id="tI2-ZT-TFH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="SDKVersionLabel" destination="Nvt-oR-rTP" id="OhU-Lc-K7k"/>
+                        <outlet property="appVersionLabel" destination="IRf-hs-Pyo" id="JKe-Ln-P8b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c6x-Ez-CbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1104" y="352"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon@2x.png" width="119" height="86"/>
+    </resources>
+</document>

@@ -1,0 +1,37 @@
+//
+//  AppDelegate.h
+//  GBOSA
+//
+//  Created by Zono on 16/3/22.
+//  Copyright © 2016年 Gizwits. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+#define APP_ID  @"ea407a7a79a242238f2f128c86d809f4"
+#define APP_SECRET  @"1e382f80eb1047efae78a5f5c5287c6c"
+
+//产品KEY和Product_name
+#define PRODUCT_KEY @"c36689011a5f4c5f8081e0f83cc64fd8"    //净智生活
+#define NAME1       @"空气净化器"
+#define NAME1_MODE     @"HKJ_A600X6"
+
+#define PRODUCT_KEY_MO @"241b6c897bb7469ea1b6180142b8b59c" //摩纳净水
+#define NAME2       @"反渗透净水机"
+#define NAME2_MODE     @"HKWT_RO50A"
+
+#define TENCENT_APP_ID @"your_tencent_app_id"
+#define JPUSH_APP_KEY @"your_jpush_app_key"
+#define BPUSH_API_KEY @"your_bpush_api_key"
+
+/******************** 推送开关 ********************/
+// 只能同时支持其中一种
+//#define __JPush     // 极光推送
+//#define __BPush     // 百度推送
+
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
+
+@end

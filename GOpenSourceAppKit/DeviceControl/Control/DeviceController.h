@@ -1,0 +1,78 @@
+//
+//  GizDeviceController.h
+//  GBOSA
+//
+//  Created by Zono on 16/5/6.
+//  Copyright © 2016年 Gizwits. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import <GizWifiSDK/GizWifiSDK.h>
+#import <GizWifiSDK/GizWifiDevice.h>
+
+//数据端点标识名
+#define POINT_NAME_SWITCH                       @"Switch"              //开关
+#define POINT_NAME_WIND_VELOCITY                @"Wind_Velocity"       //风速 0.静音 1.低档 2.中档 3.高档
+#define POINT_NAME_CHILD_SECURITY_LOCK          @"Child_Security_Lock" //儿童安全锁
+#define POINT_NAME_FILTER_LIFE                  @"Filter_Life"         //滤网寿命 0 - 100
+#define POINT_NAME_PM25_AIR_QUALITY             @"Pm25_Air_Quality"    //空气质量_PM25 0 - 999
+#define POINT_NAME_FAULT_MOTOR                  @"Fault_Motor"         //电机故障
+#define POINT_NAME_FAULT_AIR_SENSORS            @"Fault_Air_Sensors"   //空气传感器故障
+#define POINT_NAME_ALERT_FILTER_LIFE            @"Alert_Filter_Life"   //滤芯寿命报警
+#define POINT_NAME_TIMING_OFF                   @"Timing_Off"          //定时关机 0.关闭 1.1小时 2.2小时 3.4小时 4.8小时
+#define POINT_NAME_MODE_TYPE                    @"Mode_Type"           //模式 0.手动 1.智能 2.睡眠
+#define POINT_NAME_TIMING_ON                    @"Timing_On"           //预约开机 0 - 56
+
+@interface DeviceController : UIViewController<GizWifiSDKDelegate, GizWifiDeviceDelegate, UIActionSheetDelegate, UIAlertViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
+
+- (id)initWithDevice:(GizWifiDevice *)device;
+
+//关机界面
+
+@property (strong, nonatomic) IBOutlet UIView *V_close;
+- (IBAction)BA_open:(id)sender;
+//开机界面
+//View1
+- (IBAction)BA_close:(id)sender;
+
+//View2
+@property (strong, nonatomic) IBOutlet UIImageView *I_wifi;
+@property (strong, nonatomic) IBOutlet UIButton *B_lock;
+- (IBAction)BA_lock:(id)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *I_filter_warn;
+@property (strong, nonatomic) IBOutlet UIImageView *I_filter;
+@property (strong, nonatomic) IBOutlet UILabel *L_filter_num;
+@property (strong, nonatomic) IBOutlet UIImageView *I_pm1;
+@property (strong, nonatomic) IBOutlet UIImageView *I_pm2;
+@property (strong, nonatomic) IBOutlet UIImageView *I_pm3;
+
+
+//View3
+- (IBAction)BA_mode:(id)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *I_mode1;
+@property (strong, nonatomic) IBOutlet UIImageView *I_mode2;
+
+- (IBAction)BA_fun:(id)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *I_fun1;
+@property (strong, nonatomic) IBOutlet UIImageView *I_fun2;
+@property (strong, nonatomic) IBOutlet UIImageView *I_fun3;
+@property (strong, nonatomic) IBOutlet UIImageView *I_fun4;
+
+- (IBAction)BA_time:(id)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *I_time1;
+@property (strong, nonatomic) IBOutlet UIImageView *I_time2;
+@property (strong, nonatomic) IBOutlet UIImageView *I_time3;
+@property (strong, nonatomic) IBOutlet UIImageView *I_time4;
+
+//pickerView
+@property (strong, nonatomic) IBOutlet UIView *V_picker;
+@property (strong, nonatomic) IBOutlet UIPickerView *Pic_time;
+@property (strong, nonatomic) IBOutlet UISwitch *Sw_repeat;
+- (IBAction)Sw_change:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *L_repeat;
+- (IBAction)time_on_ok:(id)sender;
+- (IBAction)time_on_cancel:(id)sender;
+- (IBAction)BA_close_time_on:(id)sender;
+
+
+@end
